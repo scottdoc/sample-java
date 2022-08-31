@@ -1161,8 +1161,10 @@ obj/
 appgen.properties
 srcv3/au
 srcv4/au
+srcv5/au
 
 # ant build.xml puts prepare/compile/jar outputs in target...
 target
 targetv3
 targetv4
+targetv5

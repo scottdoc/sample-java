@@ -3,7 +3,7 @@
   <!-- Input vaiables - override using arguments of the form -Dname=value -->
   <property environment="env"/>
   <property name="env" value="3PT"/>
-  <property name="usiver" value="4"/>
+  <property name="usiver" value="5"/>
   <property name="stsver" value="12"/>
   <!-- Input vaiables -->
 
