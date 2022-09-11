@@ -4,6 +4,7 @@ It works as is with 3PT using the STS 1.2 SHA1 service.
 
 Note that USI v3 has been deprecated, so support for it has been removed.
 
+* USI v5 Service https://3pt.portal.usi.gov.au/Service/v5/UsiService.svc
 * USI v4 Service https://3pt.portal.usi.gov.au/Service/UsiService.svc
 * STS Service https://softwareauthorisations.acc.ato.gov.au/R3.0/S007v1.2/service.svc OR
 * STS Service https://softwareauthorisations.acc.ato.gov.au/R3.0/S007v1.3/service.svc
@@ -11,6 +12,7 @@ Note that USI v3 has been deprecated, so support for it has been removed.
 
 Alternatively, see below for PROD which uses:
 
+* USI v5 Service https://portal.usi.gov.au/Service/v5/UsiService.svc
 * USI v4 Service https://portal.usi.gov.au/Service/UsiService.svc
 * STS Service https://softwareauthorisations.ato.gov.au/R3.0/S007v1.2/service.svc OR
 * STS Service https://softwareauthorisations.ato.gov.au/R3.0/S007v1.3/service.svc
@@ -26,7 +28,7 @@ The WSDLs used are NOT those hosted on the USI site. Instead local modified copi
 
 Files:
 
-* USI v4: See srcv4/wsdls for the modified versions using the STS v1.2 or v1.3 service
+* USI v5: See srcv5/wsdls for the modified versions using the STS v1.2 or v1.3 service
     - 3PT: https://3pt.portal.usi.gov.au/Service/v3/UsiCreateService.wsdl
     - PROD: https://portal.usi.gov.au/Service/v3/UsiCreateService.wsdl
 
@@ -51,20 +53,20 @@ See the input vars in build.xml.
 
 e.g.
 
-  * ant -Dusiver=4 -Denv=PROD getjars wsdl jar runUSITest
+  * ant -Dusiver=5 -Denv=PROD getjars wsdl jar runUSITest
 
 or seperately run targets
   * ant getjars
-  * ant -Dusiver=4 -Denv=PROD wsdl
-  * ant -Dusiver=4 jar
-  * ant -Dusiver=4 runUSITest
+  * ant -Dusiver=5 -Denv=PROD wsdl
+  * ant -Dusiver=5 jar
+  * ant -Dusiver=5 runUSITest
 
-will generate files for USI v4 for production use (requires a valid production keystore file to run).
+will generate files for USI v5 for production use (requires a valid production keystore file to run).
 The wsdl target will setup the appgen.properties file and
 copy the application.<env>.properties to application.properties where <env> is 3PT or PROD.
 
 Variables exist to set:
-  * USI v3 or v4 service (v3 no longer supported)
+  * USI v5 or v4 service (v3 no longer supported)
   * 3PT or PROD
   * STS v1.2 or v1.3
 
@@ -130,6 +132,8 @@ Structure
     - contains numerous changes to support *client* side calls
 * srcv4/META-INF
     - the wsdl definition file consumed by the generated source
+* srcv5/*
+    - the USI v5 files
 * lib
     - where downloaded jars are put
 
